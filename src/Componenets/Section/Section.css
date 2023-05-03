@@ -1,0 +1,67 @@
+.sectionContainer {
+  background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.1)), url("../../../public/Assets/SectionImg2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sectionInfo{
+    height: 595px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionText {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.siteName {
+  line-height: 52px;
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.siteAbt{
+    font-size: 1.1rem;
+    line-height: 28px;
+    margin: 16px 0px 0px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.searchContainer{
+    margin-top: 20px;
+}
+
+#searchInput{
+    color: #111111;
+    padding: 10px 100px;
+    outline: transparent;
+}
+
+#searchInput::placeholder{
+    text-align: start;
+}
+
+/* .searchBtn{
+    padding: 10px 12px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 400;
+    border-style: none;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-left: 10px;
+} */
+
+.searchText{
+    font-size: .9rem;
+    font-weight: 400;
+    margin: 2px 0 0 5px;
+}
