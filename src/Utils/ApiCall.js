@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
-import {axios} from 'axios'
+
+import Images from '../Componenets/Photos/Images';
 
 const ApiCall = () => {
 
  
-
-  return (
-    <div>ApiCall</div>
-  )
 }
 
 export default ApiCall
