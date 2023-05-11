@@ -1,6 +1,6 @@
 import React from "react";
 import "./Nav.css";
-import { FaImage, FaHamburger } from "react-icons/fa";
+import { FaImage } from "react-icons/fa";
 
 const Nav = () => {
   return (

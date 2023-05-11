@@ -1,9 +1,9 @@
-import React from "react";
+import {React} from "react";
 import "./Section.css";
+import { useNavigate } from "react-router-dom";
 
 const Section = () => {
-
-  
+const navigate = useNavigate();
 
   return (
     <div className="sectionContainer">
@@ -13,18 +13,7 @@ const Section = () => {
           <p className="siteAbt">
             The internet's source for visuals <br /> Powered by Unsplash
           </p>
-          <div className="searchContainer">
-            <input
-              type="search"
-              name="search"
-              id="searchInput"
-              placeholder="Search high resolution images"
-            />
-            {/* <button className="searchBtn">Search</button> */}
-            <p className="searchText">
-              Trending: 3D, Nature, Wallpapers, love, film
-            </p>
-          </div>
+          <button className="searchImagesPageBtn" onClick={()=>{navigate("/searchData")}}>Search high quality images</button>
         </div>
       </div>
     </div>

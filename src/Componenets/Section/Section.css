@@ -1,5 +1,5 @@
 .sectionContainer {
-  background: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.1)), url("../../../public/Assets/SectionImg2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)), url("../../../public/Assets/SectionImg2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */

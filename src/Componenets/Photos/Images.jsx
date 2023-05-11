@@ -6,7 +6,7 @@ import { Dna } from "react-loader-spinner";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 
-const Images = () => {
+function Images  ()  {
   const fetchImages = async (page = 1) => {
     const response = await axios.get(
       `https://api.unsplash.com/photos?client_id=W5R_xL3DvFvEfEY2PmyR3uTzhaRMT3xZv_53VS9OF4I&per_page=30&page=${page}`
@@ -36,7 +36,7 @@ const Images = () => {
       const { scrollHeight, scrollTop, clientHeight } =
         event.target.scrollingElement;
 
-      if (!fetching && scrollHeight - scrollTop <= clientHeight * 1.2) {
+      if (!fetching && scrollHeight - scrollTop <= clientHeight * 1.5) {
         fetching = true;
         if (hasNextPage) await fetchNextPage();
         fetching = false;
@@ -57,7 +57,7 @@ const Images = () => {
     return <p>ERROR: {error.message}</p>;
   }
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="imagesList">
       <ImageList variant="masonry" cols={3} gap={13}>
