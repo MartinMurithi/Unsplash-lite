@@ -2,6 +2,9 @@ import React from "react";
 import "./Section.css";
 
 const Section = () => {
+
+  
+
   return (
     <div className="sectionContainer">
       <div className="sectionInfo">
