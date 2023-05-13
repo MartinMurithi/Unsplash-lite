@@ -59,8 +59,8 @@ function Images() {
   return (
     <div className="imagesList">
       <ImageList variant="masonry" cols={3} gap={13}>
-        {data.pages.map((page) =>
-          page.map((image) =>(
+        {data && data.pages && data.pages.map((page) =>
+          page?.map((image) =>(
             <ImageListItem key={image.id}>
               <img
                 className="image"
