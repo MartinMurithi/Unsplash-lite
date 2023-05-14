@@ -1,17 +1,12 @@
 
 .imagesList{
-    margin: 50px 15px;
+    margin: 20px 15px;
 }
 
 .image{
     cursor: zoom-in;
 }
-
-.image:hover{
-    cursor: zoom-in;
-    filter: brightness(60%);
-}
-
+ 
 .authorNames{
     position: absolute;
     bottom: 0;
@@ -23,6 +18,28 @@
     font-weight: 500;
 }
 
-.image:hover + .authorNames{
-    visibility: visible;
+.reccommendation{
+    margin: 15px 0 15px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 481px) {
+    .reccommendation{
+    margin: 10px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+}
+@media only screen and (max-width: 768px) {
+    .reccommendation{
+    margin: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
 }

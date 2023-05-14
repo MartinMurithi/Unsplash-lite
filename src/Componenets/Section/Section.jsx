@@ -13,7 +13,7 @@ const navigate = useNavigate();
           <p className="siteAbt">
             The internet's source for visuals <br /> Powered by Unsplash
           </p>
-          <button className="searchImagesPageBtn" onClick={()=>{navigate("/searchData")}}>Search high quality images</button>
+          <button className="searchImagesPageBtn" onClick={()=>{navigate("/searchData")}}>Search high resolution images</button>
         </div>
       </div>
     </div>

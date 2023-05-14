@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
+import "./SearchData.css";
+import { FaSearch } from "react-icons/fa"
 
 function SearchData() {
   const [search, setSearch] = useState("");
@@ -63,49 +64,66 @@ function SearchData() {
     return <p>ERROR : {error.message}</p>;
   }
 
+  const handleInputSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
   const handleSearch = () => {
     refetch();
   };
   return (
     <>
-      <div>
+      <div className="searchUtils">
         <input
           type="search"
           id="searchInput"
           placeholder="Search high resolution images"
           value={search}
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
+          onChange={handleInputSearch}
         />
         <button className="searchBtn" onClick={handleSearch}>
           Search
         </button>
-        <p className="searchText">
+        <FaSearch className="searchIcon" onClick={handleSearch}/>
+        {/* <p className="searchText">
           Trending: 3D, Nature, Wallpapers, love, film
-        </p>
+        </p> */}
       </div>
 
+      {search ? <p className="textResults">{search}</p> : null}
+
       {/* Uses the same css styles with the images list */}
-      <div className="imageList">
-        <ImageList variant="masonry" cols={3} gap={10}>
-          {data?.pages?.map((page) =>
-            page.map((image) => (
-              <ImageListItem key={image.id}>
-                <img
-                  className="image"
-                  src={image.urls?.small}
-                  alt={image.alt_description}
-                  color={image.color}
-                  loading="lazy"
-                />
-                <p className="authorNames">
-                  {image.user?.first_name} {image.user?.last_name}
-                </p>
-              </ImageListItem>
-            ))
-          )}
-        </ImageList>
+      <div className="imagesList">
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{
+            350: 1,
+            750: 2,
+            900: 3,
+          }}
+        >
+          <Masonry gutter="20px">
+            {data.pages.length > 0 ?
+              data.pages &&
+              data.pages.map((page) =>
+                page?.map((image) => (
+                  <>
+                    <img
+                      key={image.id}
+                      className="image"
+                      src={image.urls?.small}
+                      alt={image.alt_description}
+                      color={image.color}
+                      loading="lazy"
+                      style={{ display: "block" }}
+                    />
+                    {/* <p className="authorNames">
+                        {image.user?.first_name} {image.user?.last_name}
+                      </p> */}
+                  </>
+                ))
+              ) : <ThreeDots/>}
+          </Masonry>
+        </ResponsiveMasonry>
       </div>
     </>
   );

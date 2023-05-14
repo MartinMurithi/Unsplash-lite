@@ -3,8 +3,7 @@ import "./Images.css";
 import axios from "axios";
 import { useInfiniteQuery } from "react-query";
 import { Dna } from "react-loader-spinner";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 function Images() {
   const fetchImages = async (page = 1) => {
@@ -55,28 +54,42 @@ function Images() {
     return <p>ERROR: {error.message}</p>;
   }
 
-  console.log(data);
   return (
-    <div className="imagesList">
-      <ImageList variant="masonry" cols={3} gap={13}>
-        {data && data.pages && data.pages.map((page) =>
-          page?.map((image) =>(
-            <ImageListItem key={image.id}>
-              <img
-                className="image"
-                src={image.urls?.small}
-                alt={image.alt_description}
-                color={image.color}
-                loading="lazy"
-              />
-              <p className="authorNames">
-                {image.user?.first_name} {image.user?.last_name}
-              </p>
-            </ImageListItem>
-          ))
-        )}
-      </ImageList>
-    </div>
+    <>
+      <p className="reccommendation">Reccommended for you</p>
+      <div className="imagesList">
+        <ResponsiveMasonry
+          columnsCountBreakPoints={{
+            350: 1,
+            750: 2,
+            900: 3,
+          }}
+        >
+          
+          <Masonry gutter="20px">
+            {data &&
+              data.pages &&
+              data.pages.map((page) =>
+                page?.map((image) => (
+                  <>
+                    <img
+                      className="image"
+                      src={image.urls?.small}
+                      alt={image.alt_description}
+                      color={image.color}
+                      loading="lazy"
+                      style={{ display: "block" }}
+                    />
+                    {/* <p className="authorNames">
+                        {image.user?.first_name} {image.user?.last_name}
+                      </p> */}
+                  </>
+                ))
+              )}
+          </Masonry>
+        </ResponsiveMasonry>
+      </div>
+    </>
   );
 }
 

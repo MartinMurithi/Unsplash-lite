@@ -39,29 +39,56 @@
     margin-top: 20px;
 }
 
-#searchInput{
-    color: #111111;
-    padding: 10px 100px;
-    outline: transparent;
-}
-
-#searchInput::placeholder{
-    text-align: start;
-}
-
-/* .searchBtn{
-    padding: 10px 12px;
-    background-color: #fff;
-    color: #000;
-    font-weight: 400;
+.searchImagesPageBtn{
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
     border-style: none;
-    border: 1px solid #000;
+    outline: transparent;
+    border-radius: 3px;
     cursor: pointer;
-    margin-left: 10px;
-} */
+}
 
-.searchText{
+@media only screen and (max-width: 482px) {
+
+.sectionInfo{
+  height: 250px;
+}
+
+  .siteName{
+    font-size: 1rem;
+    line-height: 10px;
+  }
+
+  .siteAbt{
+    font-size: .7rem;
+    line-height: 20px;
+  }
+
+  .searchImagesPageBtn{
+    font-size: .6rem;
+    padding: 5px 3px;
+}
+
+}
+@media only screen and (max-width: 768px) {
+
+.sectionInfo{
+  height: 200px;
+}
+
+  .siteName{
+    font-size: 1.4rem;
+    line-height: 20px;
+  }
+
+  .siteAbt{
     font-size: .9rem;
-    font-weight: 400;
-    margin: 2px 0 0 5px;
+    line-height: 25px;
+  }
+
+  .searchImagesPageBtn{
+    font-size: .7rem;
+    padding: 8px 3px;
+}
+
 }
