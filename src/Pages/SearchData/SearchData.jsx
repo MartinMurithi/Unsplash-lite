@@ -114,7 +114,6 @@ function SearchData() {
                       alt={image.alt_description}
                       color={image.color}
                       loading="lazy"
-                      style={{ display: "block" }}
                     />
                     {/* <p className="authorNames">
                         {image.user?.first_name} {image.user?.last_name}

@@ -1,36 +1,50 @@
 import React, { useState } from "react";
 import "./Nav.css";
 import { FaImage, FaEllipsisV } from "react-icons/fa";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate, NavLink } from "react-router-dom";
 
 const Nav = () => {
-
   const navigate = useNavigate();
   const [showLinks, setShowLinks] = useState(false);
 
   const showModalMenu = () => {
-    setShowLinks(!showLinks);
-  }
+    setShowLinks((prev) => !prev);
+  };
 
   return (
     <div className="navBarContainer">
       <div className="logo">
-        <FaImage className="imgLogo" onClick={()=>{navigate("/")}} />
+        <FaImage
+          className="imgLogo"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
       </div>
 
       <div className="rightSideUtils">
-        {/* <div className="submitImgBtn">
-          <button className="submitBtn">Submit a photo</button>
-        </div> */}
-        <div className="menuIcon"><FaEllipsisV onClick={showModalMenu} /></div>
-        
-          <div className="navLinks" id={showLinks ? "hidden" : ""}>
-          <p className="about">About</p>
-          <p className="about">History</p>
-          <p className="about">Contact us</p>
-          <p className="about">Help center</p>
+        <div className="menuIcon">
+          <FaEllipsisV onClick={showModalMenu} />
         </div>
-        
+
+        <div className="navLinks" id={showLinks ? "hidden" : ""}>
+          <NavLink to={"/"} className={"link"}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={"link"}>
+            About
+          </NavLink>
+          <NavLink to="/history" className={"link"}>
+            History
+          </NavLink>
+          <NavLink to="/contacts" className={"link"}>
+            Contacts
+          </NavLink>
+          <NavLink to="/helpcenter" className={"link"}>
+            Help Center
+          </NavLink>
+        </div>
+
         {/* <div className="menuIcon">
           <FaHamburger />
         </div> */}

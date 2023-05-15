@@ -8,7 +8,8 @@ const Character = ({ character }) => {
               <h4 className="name">{character.name}</h4>
               <h5 className="species">{character.species}</h5>
               <h5 className="status">{character.status}</h5>
-              <h5 className="location"> Last seen -{ character.location.name }</h5>
+        <h5 className="location"> Last seen -{character.location.name}</h5>
+        <a href="/regisert">regfuhjjk</a>
           </div>
     </div>
   )
