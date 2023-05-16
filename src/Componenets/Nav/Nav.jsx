@@ -44,10 +44,7 @@ const Nav = () => {
             Help Center
           </NavLink>
         </div>
-
-        {/* <div className="menuIcon">
-          <FaHamburger />
-        </div> */}
+        
       </div>
     </div>
   );

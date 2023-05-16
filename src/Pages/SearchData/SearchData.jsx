@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
-import Masonry, {ResponsiveMasonry} from "react-responsive-masonry";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import "./SearchData.css";
-import { FaSearch } from "react-icons/fa"
+import { FaSearch } from "react-icons/fa";
+import Modal from "../../Componenets/Modal/Modal";
 
 function SearchData() {
   const [search, setSearch] = useState("");
@@ -84,10 +85,8 @@ function SearchData() {
         <button className="searchBtn" onClick={handleSearch}>
           Search
         </button>
-        <FaSearch className="searchIcon" onClick={handleSearch}/>
-        {/* <p className="searchText">
-          Trending: 3D, Nature, Wallpapers, love, film
-        </p> */}
+        <FaSearch className="searchIcon" onClick={handleSearch} />
+        
       </div>
 
       {search ? <p className="textResults">{search}</p> : null}
@@ -102,25 +101,25 @@ function SearchData() {
           }}
         >
           <Masonry gutter="20px">
-            {data.pages.length > 0 ?
+            {data.pages.length > 0 ? (
               data.pages &&
               data.pages.map((page) =>
                 page?.map((image) => (
-                  <>
+                 <div className="imgContainer" key={image.id}>
                     <img
-                      key={image.id}
                       className="image"
                       src={image.urls?.small}
                       alt={image.alt_description}
                       color={image.color}
                       loading="lazy"
                     />
-                    {/* <p className="authorNames">
-                        {image.user?.first_name} {image.user?.last_name}
-                      </p> */}
-                  </>
+                    <Modal image={image} className="modal" />
+                  </div>
                 ))
-              ) : <ThreeDots/>}
+              )
+            ) : (
+              <ThreeDots />
+            )}
           </Masonry>
         </ResponsiveMasonry>
       </div>

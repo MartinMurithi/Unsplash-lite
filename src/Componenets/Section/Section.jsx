@@ -2,6 +2,7 @@ import {React} from "react";
 import "./Section.css";
 import { useNavigate } from "react-router-dom";
 
+
 const Section = () => {
 const navigate = useNavigate();
 

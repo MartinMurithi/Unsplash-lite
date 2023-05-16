@@ -1,0 +1,120 @@
+.imgModal {
+  color: #fff;
+  position: relative;
+  bottom: 65px;
+  margin-bottom: -85px;
+  margin-left: 1px;
+  /* visibility: hidden; */
+}
+
+.imgModal:hover {
+  color: #ffffff;
+  cursor: zoom-in;
+}
+
+.modalUtils {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  margin: 10px 15px;
+}
+
+.profilePic {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.userName {
+  margin: -3px 0 0 10px;
+  font-size: 0.8rem;
+}
+
+.portfolioUrl {
+  margin: -2px 0 0 10px;
+  font-size: 0.8rem;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  margin: 10px 15px;
+  gap: 20px;
+}
+
+.heart {
+  color: red;
+  margin: 2px;
+  font-size: .8rem;
+}
+
+.likesCount {
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.downloadBtn {
+  margin: 2px;
+  font-size: .8rem;
+  cursor: pointer;
+}
+.modalImage {
+  width: 0;
+  height: 0;
+}
+
+@media only screen  and (max-width : 481px) {
+  .userName, .portfolioUrl{
+    font-size: .7rem;
+  }
+  
+.heart {
+  color: red;
+  margin: 2px;
+  font-size: .8rem;
+}
+
+.likesCount {
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+.downloadBtn {
+  margin: 2px;
+  font-size: .8rem;
+  cursor: pointer;
+}
+}
+
+@media only screen  and (max-width : 331px) {
+
+  .profilePic{
+    display: none;
+  }
+  .userName, .portfolioUrl{
+    font-size: .6rem;
+  }
+  
+.heart {
+  color: red;
+  margin: 2px;
+  font-size: .6rem;
+}
+
+.likesCount {
+  text-align: center;
+  font-size: 0.6rem;
+}
+
+.downloadBtn {
+  margin: 2px;
+  font-size: .6rem;
+  cursor: pointer;
+}
+}

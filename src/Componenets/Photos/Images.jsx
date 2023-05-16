@@ -4,6 +4,7 @@ import axios from "axios";
 import { useInfiniteQuery } from "react-query";
 import { Dna } from "react-loader-spinner";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Modal from "../Modal/Modal";
 
 function Images() {
   const fetchImages = async (page = 1) => {
@@ -54,6 +55,8 @@ function Images() {
     return <p>ERROR: {error.message}</p>;
   }
 
+  // console.log(data);
+
   return (
     <>
       <p className="reccommendation">Reccommended for you</p>
@@ -65,25 +68,27 @@ function Images() {
             900: 3,
           }}
         >
-          
           <Masonry gutter="20px">
             {data &&
               data.pages &&
               data.pages.map((page) =>
                 page?.map((image) => (
-                  <>
-                    <img
-                      className="image"
-                      src={image.urls?.small}
-                      alt={image.alt_description}
-                      color={image.color}
-                      loading="lazy"
-                      key={image.id}
-                    />
-                    {/* <p className="authorNames">
-                        {image.user?.first_name} {image.user?.last_name}
-                      </p> */}
-                  </>
+                  <div className="imgContainer" key={image.id}>
+                    {/* <a
+                      href={image.urls?.regular}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    > */}
+                      <img
+                        className="image"
+                        src={image.urls?.small}
+                        alt={image.alt_description}
+                        color={image.color}
+                        loading="lazy"
+                      />
+                      <Modal image={image} className="modal" />
+                    {/* </a> */}
+                  </div>
                 ))
               )}
           </Masonry>

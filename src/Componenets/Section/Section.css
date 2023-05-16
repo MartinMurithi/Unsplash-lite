@@ -21,15 +21,15 @@
 }
 
 .siteName {
-  line-height: 52px;
+  line-height: 30px;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .siteAbt{
-    font-size: 1.1rem;
-    line-height: 28px;
+    font-size: .9rem;
+    line-height: 25px;
     margin: 16px 0px 0px;
     font-weight: 400;
     text-align: center;
@@ -55,7 +55,7 @@
 }
 
   .siteName{
-    font-size: 1rem;
+    font-size: .9rem;
     line-height: 10px;
   }
 
@@ -77,17 +77,17 @@
 }
 
   .siteName{
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     line-height: 20px;
   }
 
   .siteAbt{
-    font-size: .9rem;
+    font-size: .8rem;
     line-height: 25px;
   }
 
   .searchImagesPageBtn{
-    font-size: .7rem;
+    font-size: .6rem;
     padding: 8px 3px;
 }
 
