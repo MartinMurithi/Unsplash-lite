@@ -9,7 +9,7 @@ import Modal from "../Modal/Modal";
 function Images() {
   const fetchImages = async (page = 1) => {
     const response = await axios.get(
-      `https://api.unsplash.com/photos?client_id=W5R_xL3DvFvEfEY2PmyR3uTzhaRMT3xZv_53VS9OF4I&per_page=30&page=${page}`
+      `https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_UNSPLASH_CLIENT_ID}&per_page=30&page=${page}`
     );
     return response.data;
   };
@@ -74,11 +74,11 @@ function Images() {
               data.pages.map((page) =>
                 page?.map((image) => (
                   <div className="imgContainer" key={image.id}>
-                    {/* <a
+                    <a
                       href={image.urls?.regular}
                       target="_blank"
                       rel="noopener noreferrer"
-                    > */}
+                    >
                       <img
                         className="image"
                         src={image.urls?.small}
@@ -87,7 +87,7 @@ function Images() {
                         loading="lazy"
                       />
                       <Modal image={image} className="modal" />
-                    {/* </a> */}
+                    </a>
                   </div>
                 ))
               )}

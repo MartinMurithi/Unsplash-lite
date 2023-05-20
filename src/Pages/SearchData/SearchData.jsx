@@ -9,11 +9,10 @@ import Modal from "../../Componenets/Modal/Modal";
 
 function SearchData() {
   const [search, setSearch] = useState("");
-  // const SEARCH_API_URL = `https://api.unsplash.com/search/photos?client_id=W5R_xL3DvFvEfEY2PmyR3uTzhaRMT3xZv_53VS9OF4I&page=1&per_page=30&query=${search}`;
 
   const searchImages = async (page = 1) => {
     const response = await axios.get(
-      `https://api.unsplash.com/search/photos?client_id=W5R_xL3DvFvEfEY2PmyR3uTzhaRMT3xZv_53VS9OF4I&page=${page}&per_page=30&query=${search}`
+      `https://api.unsplash.com/search/photos?client_id=${process.env.REACT_APP_UNSPLASH_CLIENT_ID}&page=${page}&per_page=30&query=${search}`
     );
     return response.data.results;
   };
@@ -86,7 +85,6 @@ function SearchData() {
           Search
         </button>
         <FaSearch className="searchIcon" onClick={handleSearch} />
-        
       </div>
 
       {search ? <p className="textResults">{search}</p> : null}
@@ -105,15 +103,21 @@ function SearchData() {
               data.pages &&
               data.pages.map((page) =>
                 page?.map((image) => (
-                 <div className="imgContainer" key={image.id}>
-                    <img
-                      className="image"
-                      src={image.urls?.small}
-                      alt={image.alt_description}
-                      color={image.color}
-                      loading="lazy"
-                    />
-                    <Modal image={image} className="modal" />
+                  <div className="imgContainer" key={image.id}>
+                    <a
+                      href={image.urls?.regular}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        className="image"
+                        src={image.urls?.small}
+                        alt={image.alt_description}
+                        color={image.color}
+                        loading="lazy"
+                      />
+                      <Modal image={image} className="modal" />
+                    </a>
                   </div>
                 ))
               )
