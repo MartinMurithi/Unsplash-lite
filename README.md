@@ -1,1 +1,1 @@
-=>Unsplash-lite, a web application that uses the unsplash API tof display the latest images and allows users to search for images. <br/> =>Live app : https://martinmurithi.github.io/Unsplash-lite/
+=>Unsplash-lite, a web application that uses the unsplash API tof display the latest images and allows users to search for images. <br/>=>The user portfolio url takes you to the image's author portfolio. <br/> =>Live app : https://martinmurithi.github.io/Unsplash-lite/
