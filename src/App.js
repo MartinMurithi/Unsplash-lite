@@ -7,6 +7,7 @@ import About from "./Pages/About";
 import History from "./Pages/History";
 import Contacts from "./Pages/Contacts";
 import Help from "./Pages/Help";
+import PageNotFound from "./Pages/PageNotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/history" element={<History />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/helpcenter" element={<Help />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
