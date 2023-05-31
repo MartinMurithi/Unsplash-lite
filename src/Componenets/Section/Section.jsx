@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 
 const Section = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
+  
+  const rosey = () => {
+    navigate("/searchData")
+}
 
   return (
     <div className="sectionContainer">
@@ -14,7 +18,7 @@ const navigate = useNavigate();
           <p className="siteAbt">
             The internet's source for visuals <br /> Powered by Unsplash
           </p>
-          <button className="searchImagesPageBtn" onClick={()=>{navigate("/searchData")}}>Search high resolution images</button>
+          <button className="searchImagesPageBtn" onClick={rosey}>Search high resolution images</button>
         </div>
       </div>
     </div>

@@ -16,8 +16,8 @@ const Characters = () => {
 
   const { data, status, error, isPreviousData } = useQuery({
     queryKey: ["characters", page],
-      queryFn: fetchCharacters,
-    keepPreviousData: true
+    queryFn: fetchCharacters,
+    keepPreviousData: true,
   });
 
   if (status === "loading") {
@@ -45,7 +45,12 @@ const Characters = () => {
         >
           Previous
         </button>
-        <button disabled={isPreviousData || !data.info.next} onClick={()=>setPage((next)=> next + 1)}>Next</button>
+        <button
+          disabled={isPreviousData || !data.info.next}
+          onClick={() => setPage((next) => next + 1)}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

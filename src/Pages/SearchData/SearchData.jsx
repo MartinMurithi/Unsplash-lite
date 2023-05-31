@@ -71,6 +71,22 @@ function SearchData() {
   const handleSearch = () => {
     refetch();
   };
+
+  // useEffect(() => {
+  const onKeyPressSearch = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      console.log("Enter key pressed");
+      refetch();
+    }
+document.addEventListener("keydown", onKeyPressSearch);
+return () => {
+      document.removeEventListener("keydown", onKeyPressSearch);
+    };
+  };
+
+  // }, []);
+
   return (
     <>
       <div className="searchUtils">
@@ -80,6 +96,7 @@ function SearchData() {
           placeholder="Search high resolution images"
           value={search}
           onChange={handleInputSearch}
+          onKeyDown={onKeyPressSearch}
         />
         <button className="searchBtn" onClick={handleSearch}>
           Search

@@ -28,12 +28,15 @@ const Nav = () => {
         </div>
 
         <div className="navLinks" id={showLinks ? "hidden" : ""}>
+
           <NavLink to={"/"} className={"link"}>
             Home
           </NavLink>
+
           <NavLink to="/about" className={"link"}>
             About
           </NavLink>
+          
           <NavLink to="/history" className={"link"}>
             History
           </NavLink>
